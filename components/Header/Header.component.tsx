@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LogoBlue from '@static/logoblue.svg';
 import LogoPink from '@static/logopink.svg';
-
+import { Icon } from '@components/Icon/Icon.component';
 type HeaderProps = {
     color: string;
 };
@@ -20,5 +20,7 @@ function findLogo(color: string) {
     return <LogoBlue data-testid="logoBlue" />;
 }
 export const Header = ({ color }: HeaderProps) => (
-    <StyledHeader data-testid="app-header">{findLogo(color)}</StyledHeader>
+    <StyledHeader data-testid="app-header">
+        <Icon>{findLogo(color)}</Icon>
+    </StyledHeader>
 );
