@@ -7,7 +7,7 @@ type TextProps = {
     classType: string;
 };
 
-const TextStyle = styled.span`
+const StyledText = styled.span`
     color: ${(props) => props.style.color};
 
     &.content {
@@ -26,9 +26,9 @@ const TextStyle = styled.span`
 `;
 
 export const Text = ({ text, style, classType }: TextProps) => (
-    <TextStyle style={style} className={classType}>
+    <StyledText style={style} className={classType}>
         {text}
-    </TextStyle>
+    </StyledText>
 );
 
 Text.defaultProps = {
