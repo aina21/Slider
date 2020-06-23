@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 type TextProps = {
     text: string;
-    style: object;
-    classType: string;
+    style?: object;
+    classType?: string;
 };
 
 const StyledText = styled.span`
@@ -15,6 +15,7 @@ const StyledText = styled.span`
         font-size: 40px;
         font-weight: bolder;
         font-style: ${(props) => props.style.fontStyle};
+        letter-spacing: 0.8px;
     }
 
     &.footNote {

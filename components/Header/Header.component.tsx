@@ -11,13 +11,6 @@ const StyledHeader = styled.div`
     width: 100%;
     height: 60px;
     text-align: center;
-
-    .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 20px 10px 20px 10px;
-    }
 `;
 
 function findLogo(color: string) {

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Text } from './Text.component';
 
 const style = {
-    color: '#FF88AD',
+    color: 'black',
     fontStyle: 'normal',
 };
 storiesOf('Text', module).add('Text', () => (
