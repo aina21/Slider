@@ -7,12 +7,15 @@ const StyledSection = styled.section`
     background-color: black;
     color: white;
     text-align: center;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px 70px 20px;
 
     &.center {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+    @media (max-width: 768px) {
+        width: 90%;
     }
 `;
 

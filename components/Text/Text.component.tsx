@@ -37,7 +37,7 @@ Text.defaultProps = {
     style: {
         color: 'white',
         fontStyle: 'normal',
-        fontWeight: 'normal',
+        fontWeight: '',
     },
     classType: '',
 };
