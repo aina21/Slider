@@ -1,27 +1,46 @@
 import Head from 'next/head';
-import { Slide } from '@components/Slide/Slide.component';
+import { SlideProps } from '@components/Slide/Slide.component';
+import { Slider } from '@components/Slider/Slider.component';
 
 export default function Index() {
+    const slides: SlideProps[] = [
+        {
+            color: 'blue',
+            icon: 'face',
+            text: 'slide 1, blue',
+            highlightedText: 'sgfsgfdgdf',
+            extendedText: 'sdfsdfsd',
+        },
+        {
+            color: 'pink',
+            icon: 'cupcake',
+            text: 'slide 2',
+            highlightedText: 'sgfsgfdgdf',
+        },
+        {
+            color: 'blue',
+            icon: 'face',
+            text: 'slide 3',
+            highlightedText: 'sgfsgfdgdf',
+            extendedText: 'sdfsdfsd',
+        },
+        {
+            color: 'pink',
+            icon: 'face',
+            text: 'slide 4',
+            highlightedText: 'sgfsgfdgdf',
+        },
+    ];
     return (
-        // <Layout color="blue">
-        //     <Content>
-        //         <SectionText>
-        //             <Text
-        //                 text="This piece of software is "
-        //                 classType="content"
-        //             />
-        //             <TextHighlight color="blue" text="the shit" />
-        //             <Text
-        //                 text=", I?ve never tried anything like it."
-        //                 classType="content"
-        //             />
-        //         </SectionText>
-        //         <InfoSection logo="happyface">
-        //             <InfoText fontWeight={700} text="Mr. Face" />
-        //             <InfoText fontWeight={100} text="Karma Guru @ Face Co?" />
-        //         </InfoSection>
-        //     </Content>
-        // </Layout>
-        <Slide isPink={false}></Slide>
+        <>
+            <Head>
+                <title>Slider</title>
+                <link
+                    rel="stylesheet"
+                    href="https://use.typekit.net/izy8aoj.css"
+                />
+            </Head>
+            <Slider slides={slides} />
+        </>
     );
 }

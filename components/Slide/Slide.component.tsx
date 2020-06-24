@@ -4,80 +4,66 @@ import { Text } from '@components/Text/Text.component';
 import { Header } from '@components/Header/Header.component';
 import { Info } from '@components/Info/Info.component';
 
-interface SlideProps {
-    isPink: boolean;
+export interface SlideProps {
+    color: 'blue' | 'pink';
+    icon: 'face' | 'cupcake';
+    text: string;
+    highlightedText?: string;
+    extendedText?: string;
 }
 
-const StyledSection = styled.section`
-    width: 100%;
-    height: auto;
+const StyledSection = styled.div`
+    height: 400px;
     background-color: black;
     color: white;
     text-align: center;
-    padding: 10px 20px 10px 20px;
-
-    @media (max-width: 768px) {
-        width: 100%;
-    }
+    flex-grow: 1;
+    width: 120rem;
 `;
 
 const SectionText = styled.section`
-    width: 60rem;
     height: auto;
     background-color: black;
     color: white;
     text-align: center;
     padding: 10px 20px 70px 0px;
-
     margin-left: auto;
     margin-right: auto;
-
-    @media (max-width: 768px) {
-        width: 90%;
-    }
 `;
 
-export const Slide = ({ isPink }: SlideProps) => (
-    <>
-        {isPink ? (
-            <StyledSection>
-                <Header color="pink" />
-                <SectionText>
-                    <Text fontWeight="bolder" size="h1" letterSpacing={0.8}>
-                        An experience that makes us feel like we?re covered in
-                        maple syrup ?
-                    </Text>
-                    <Text
-                        color="pink"
-                        fontWeight="bolder"
-                        size="h1"
-                        letterSpacing={0.8}>
-                        It?s a good thingfalse
-                    </Text>
-                </SectionText>
-                <Info isFace={false} />
-            </StyledSection>
-        ) : (
-            <StyledSection>
-                <Header color="blue" />
-                <SectionText>
-                    <Text fontWeight="bolder" size="h1" letterSpacing={0.8}>
-                        This piece of software is
-                    </Text>
-                    <Text
-                        color="blue"
-                        fontWeight="bolder"
-                        fontStyle="italic"
-                        size="h1">
-                        {' '}
-                        the shit
-                    </Text>
-                    <Text fontWeight="bolder" size="h1" letterSpacing={0.8}>
-                        , I?ve never tried anything like it.
-                    </Text>
-                </SectionText>
-                <Info isFace={true} />
-            </StyledSection>
-        )}
-    </>
+export const Slide = ({
+    color,
+    icon,
+    text,
+    highlightedText,
+    extendedText,
+}: SlideProps) => (
+    <StyledSection>
+        <Header color={color} />
+        <SectionText>
+            <Text
+                fontWeight="bolder"
+                size="h1"
+                letterSpacing={0.8}
+                color="white">
+                {text}
+            </Text>
+            <Text
+                color={color}
+                fontWeight="bolder"
+                size="h1"
+                fontStyle={color == 'pink' ? 'normal' : 'italic'}
+                letterSpacing={0.8}>
+                {highlightedText}
+            </Text>
+            <Text
+                color="white"
+                fontWeight="bolder"
+                size="h1"
+                letterSpacing={0.8}>
+                {extendedText}
+            </Text>
+        </SectionText>
+        <Info icon={icon} />
+    </StyledSection>
 );

@@ -4,16 +4,15 @@ import { Icon } from '@components/Icon/Icon.component';
 import { Text } from '@components/Text/Text.component';
 
 interface InfoProps {
-    isFace: boolean;
+    icon: string;
 }
 
 const StyledInfo = styled.section`
-    width: 60rem;
+    width: 100%;
     height: auto;
     background-color: black;
     color: white;
     text-align: center;
-    padding: 10px 20px 10px 20px;
     margin-left: auto;
     margin-right: auto;
     @media (max-width: 768px) {
@@ -21,10 +20,10 @@ const StyledInfo = styled.section`
     }
 `;
 
-export const Info: FC<InfoProps> = ({ isFace }) => {
+export const Info: FC<InfoProps> = ({ icon }) => {
     return (
         <>
-            {isFace ? (
+            {icon === 'face' ? (
                 <StyledInfo>
                     <Icon name="happyFace" />
                     <Text size="h4" fontWeight="bolder">

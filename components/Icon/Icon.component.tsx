@@ -20,7 +20,7 @@ const getIcon = (name: string) => {
         case 'cupcake':
             return <CupCake />;
         default:
-            return <HappyFace />;
+            return <BlueLogo />;
     }
 };
 
@@ -34,7 +34,6 @@ const StyledIcon = styled.div`
 
     padding: 10px;
 `;
-true;
 
 export const Icon: FC<IconProps> = ({ name }) => (
     <StyledIcon>{getIcon(name)}</StyledIcon>

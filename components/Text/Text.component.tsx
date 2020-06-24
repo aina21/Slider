@@ -2,7 +2,7 @@ import React, { FC, Children } from 'react';
 import styled, { css } from 'styled-components';
 
 interface TextProps {
-    color?: 'blue' | 'pink';
+    color?: 'blue' | 'pink' | 'white';
     fontStyle?: 'italic' | 'normal';
     size?: 'h1' | 'h4';
     fontWeight?: 'light' | 'bolder' | 'normal';
@@ -15,6 +15,8 @@ const getColor = (color: string) => {
             return '#88FFED';
         case 'pink':
             return '#FF88AD';
+        case 'white':
+            return '#FFFFFF';
         default:
             return '#FFFFFF';
     }
@@ -31,7 +33,7 @@ const getSize = (size: string) => {
     }
 };
 
-const StyledText = styled.div<TextProps>`
+const StyledText = styled.span<TextProps>`
     color: ${({ color }) => getColor(color)}};
     
     ${({ size, fontStyle, fontWeight, letterSpacing = 0 }) => css`
@@ -43,8 +45,6 @@ const StyledText = styled.div<TextProps>`
 }
     text-align: center;
     text-align-last: center;
-    display: block;    
-    width:100%;
 `;
 
 export const Text: FC<TextProps> = ({
