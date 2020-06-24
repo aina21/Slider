@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import LogoBlue from '@static/logoblue.svg';
-import LogoPink from '@static/logopink.svg';
 import { Icon } from '@components/Icon/Icon.component';
+
 type HeaderProps = {
-    color: string;
+    color: 'blue' | 'pink';
 };
 
 const StyledHeader = styled.div`
@@ -13,14 +12,8 @@ const StyledHeader = styled.div`
     text-align: center;
 `;
 
-function findLogo(color: string) {
-    if (color == 'pink') {
-        return <LogoPink data-testid="logoPink" />;
-    }
-    return <LogoBlue data-testid="logoBlue" />;
-}
 export const Header = ({ color }: HeaderProps) => (
-    <StyledHeader data-testid="app-header">
-        <Icon>{findLogo(color)}</Icon>
+    <StyledHeader>
+        <Icon name={color}></Icon>
     </StyledHeader>
 );

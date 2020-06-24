@@ -8,7 +8,7 @@ import PinkLogo from '@static/logopink.svg';
 
 storiesOf('Icon/HappyFace', module).add('Icon', () => (
     <Icon>
-        <HappyFace></HappyFace>
+        <HappyFace />
     </Icon>
 ));
 
