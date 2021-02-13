@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import { SlideProps } from '@components/Slide/Slide.component';
-import { Slider } from '@components/Slider/Slider.component';
+import { SlideProps } from '@components/Slide/Slide';
+import { Slider } from '@components/Slider/Slider';
 
 export default function Index() {
     const slides: SlideProps[] = [

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Icon } from './Icon.component';
+import { Icon } from './Icon';
 import HappyFace from '@static/happyface.svg';
 import CupCake from '@static/cupcake.svg';
 import BlueLogo from '@static/logoblue.svg';

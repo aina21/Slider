@@ -8,11 +8,6 @@ interface SliderContentProps {
 }
 
 const SliderContentStyled = styled.div<SliderContentProps>`
-    // ${({ translate, transition, width }) => css`
-    //     transform: translateX(-${translate}px);
-    //     transition: transform ease-out ${transition}s;
-    //     width: ${width}px;
-    // `}
     width: fit-content;
     height: 500px;
     display:flex;

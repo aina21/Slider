@@ -32,20 +32,19 @@ const getSize = (size: string) => {
             return 40;
     }
 };
-
 const StyledText = styled.span<TextProps>`
-    color: ${({ color }) => getColor(color)}};
+    color: ${({ color }) => getColor(color)};
     
     ${({ size, fontStyle, fontWeight, letterSpacing = 0 }) => css`
         font-weight: ${fontWeight};
         font-size: ${getSize(size)}px;
         font-style: ${fontStyle};
         letter-spacing: ${letterSpacing};
-    `}
-}
+    `};
+
     text-align: center;
     text-align-last: center;
-`;
+`
 
 export const Text: FC<TextProps> = ({
     children,

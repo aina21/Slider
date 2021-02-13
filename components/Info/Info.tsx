@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Icon } from '@components/Icon/Icon.component';
-import { Text } from '@components/Text/Text.component';
+import { Icon } from '@components/Icon/Icon';
+import { Text } from '@components/Text/Text';
 
 interface InfoProps {
     icon: string;

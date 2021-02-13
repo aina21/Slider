@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Text } from '@components/Text/Text.component';
-import { Header } from '@components/Header/Header.component';
-import { Info } from '@components/Info/Info.component';
+import { Text } from '@components/Text/Text';
+import { Header } from '@components/Header/Header';
+import { Info } from '@components/Info/Info';
 
 export interface SlideProps {
     color: 'blue' | 'pink';

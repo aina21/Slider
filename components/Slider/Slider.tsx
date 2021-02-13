@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
-import { SliderContent } from '@components/SliderContent/SliderContent.component';
-import { Slide, SlideProps } from '@components/Slide/Slide.component';
+import { SliderContent } from '@components/SliderContent/SliderContent';
+import { Slide, SlideProps } from '@components/Slide/Slide';
 interface SliderProps {
     slides: SlideProps[];
 }
