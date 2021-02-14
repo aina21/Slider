@@ -32,6 +32,10 @@ const StyledIcon = styled.div`
     margin-left: auto;
     margin-right: auto;
 
+    .a{
+        stroke:none;
+    }
+
     padding: 10px;
 `;
 

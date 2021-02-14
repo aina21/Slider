@@ -57,6 +57,8 @@ export const Slider: FC<SliderProps> = ({ slides }) => {
                         text={slides[activeIndex].text}
                         highlightedText={slides[activeIndex].highlightedText}
                         extendedText={slides[activeIndex].extendedText}
+                        infoText={slides[activeIndex].infoText}
+                        company={slides[activeIndex].company}
                     />
                 </SliderContent>
                 <StyledNavBar>

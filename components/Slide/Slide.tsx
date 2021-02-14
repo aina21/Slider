@@ -10,7 +10,9 @@ export interface SlideProps {
     text: string;
     highlightedText?: string;
     extendedText?: string;
-}
+    infoText : string;
+    company : string;
+ }
 
 const StyledSection = styled.div`
     height: 400px;
@@ -19,6 +21,7 @@ const StyledSection = styled.div`
     text-align: center;
     flex-grow: 1;
     width: 120rem;
+    margin-top: 70px;
 `;
 
 const SectionText = styled.section`
@@ -26,9 +29,9 @@ const SectionText = styled.section`
     background-color: black;
     color: white;
     text-align: center;
-    padding: 10px 20px 70px 0px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 10px 0px 45px 0px;
+    margin-left: 35rem;
+    margin-right: 35em;
 `;
 
 export const Slide = ({
@@ -37,6 +40,8 @@ export const Slide = ({
     text,
     highlightedText,
     extendedText,
+    infoText,
+    company,
 }: SlideProps) => (
     <StyledSection>
         <Header color={color} />
@@ -64,6 +69,6 @@ export const Slide = ({
                 {extendedText}
             </Text>
         </SectionText>
-        <Info icon={icon} />
+        <Info icon={icon} infoText={infoText} company={company}/>
     </StyledSection>
 );

@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 interface TextProps {
     color?: 'blue' | 'pink' | 'white';
     fontStyle?: 'italic' | 'normal';
-    size?: 'h1' | 'h4';
+    size?: 'h1' | 'h2' | 'h3' | 'h4';
     fontWeight?: 'light' | 'bolder' | 'normal';
     letterSpacing?: number;
 }
@@ -26,15 +26,20 @@ const getSize = (size: string) => {
     switch (size) {
         case 'h1':
             return 40;
-        case 'h4':
+        case 'h2':
             return 22;
+        case 'h3':
+            return 16;
+        case 'h4':
+            return 14;
         default:
             return 40;
     }
 };
+
 const StyledText = styled.span<TextProps>`
     color: ${({ color }) => getColor(color)};
-    
+
     ${({ size, fontStyle, fontWeight, letterSpacing = 0 }) => css`
         font-weight: ${fontWeight};
         font-size: ${getSize(size)}px;
@@ -44,7 +49,7 @@ const StyledText = styled.span<TextProps>`
 
     text-align: center;
     text-align-last: center;
-`
+`;
 
 export const Text: FC<TextProps> = ({
     children,

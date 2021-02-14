@@ -5,6 +5,8 @@ import { Text } from '@components/Text/Text';
 
 interface InfoProps {
     icon: string;
+    company: string;
+    infoText: string;
 }
 
 const StyledInfo = styled.section`
@@ -15,35 +17,32 @@ const StyledInfo = styled.section`
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+
+    .infoText {
+        display:flex;
+        flex-direction:column;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
     @media (max-width: 768px) {
         width: 80%;
     }
 `;
 
-export const Info: FC<InfoProps> = ({ icon }) => {
+export const Info: FC<InfoProps> = ({ icon, infoText, company }) => {
     return (
-        <>
-            {icon === 'face' ? (
-                <StyledInfo>
-                    <Icon name="happyFace" />
-                    <Text size="h4" fontWeight="bolder">
-                        Mr. Face
-                    </Text>
-                    <Text size="h4" fontWeight="light">
-                        Karma Guru @ Face Co?
-                    </Text>
-                </StyledInfo>
-            ) : (
-                <StyledInfo>
-                    <Icon name="cupcake" />
-                    <Text size="h4" fontWeight="bolder">
-                        The whole team
-                    </Text>
-                    <Text size="h4" fontWeight="bolder">
-                        @ The Pancake Collective?
-                    </Text>
-                </StyledInfo>
-            )}
-        </>
+        <StyledInfo>
+            <Icon name={icon === 'face' ? 'happyFace' : 'cupcake'} />
+
+            <div className="infoText">
+                <Text size="h3" fontWeight="bolder">
+                    {infoText}
+                </Text>
+                <Text size={icon === 'face' ? 'h4' : 'h3'} fontWeight={icon === 'face' ? 'light' : 'bolder'}>
+                    {company}
+                </Text>
+            </div>
+        </StyledInfo>
     );
 };
