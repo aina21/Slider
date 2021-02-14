@@ -12,7 +12,7 @@ const StyledSlider = styled.div`
     margin: auto;
     overflow: hidden;
 `;
-const StyledNavBarButton = styled.div`
+const StyledNavBar = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
@@ -20,51 +20,54 @@ const StyledNavBarButton = styled.div`
     background-color: black;
 `;
 
-const StyledButton = styled.button<{ isActive: boolean }>`
-    padding: 10px;
+const StyledNavBarButton = styled.button<{ isActive: boolean }>`
     margin-right: 5px;
     cursor: pointer;
     width: 198px;
     height: 4px;
-    background: ${(isActive) => (isActive ? 'white' : '#6E7986')};
+    border: none;
+    background-color: ${({ isActive }) =>
+        isActive === true ? 'white' : '#6E7986'};
+    margin-bottom: 50px;
+
+    :active,
+    :focus {
+        outline: none;
+        border: none;
+    }
 `;
 
 export const Slider: FC<SliderProps> = ({ slides }) => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const [currentSlide, setCurrentSlide] = useState(0);
 
     const onClick = useCallback(
         (index: number) => () => {
-            console.log(index);
             setActiveIndex(index);
-            console.log(activeIndex);
         },
-        []
+        [activeIndex]
     );
+
     return (
         <>
             <StyledSlider>
                 <SliderContent>
-                    {slides.map((slide, index) => (
-                        <Slide
-                            key={index}
-                            color={slide.color}
-                            icon={slide.icon}
-                            text={slide.text}
-                            highlightedText={slide.highlightedText}
-                            extendedText={slide.extendedText}
-                        />
-                    ))}
+                    <Slide
+                        color={slides[activeIndex].color}
+                        icon={slides[activeIndex].icon}
+                        text={slides[activeIndex].text}
+                        highlightedText={slides[activeIndex].highlightedText}
+                        extendedText={slides[activeIndex].extendedText}
+                    />
                 </SliderContent>
-                <StyledNavBarButton>
+                <StyledNavBar>
                     {slides.map((_, index) => (
-                        <StyledButton
+                        <StyledNavBarButton
                             key={index}
                             onClick={onClick(index)}
-                            isActive={activeIndex === index}
+                            isActive={index === activeIndex}
                         />
                     ))}
-                </StyledNavBarButton>
+                </StyledNavBar>
             </StyledSlider>
         </>
     );
